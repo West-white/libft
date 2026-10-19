@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 13:33:18 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 19:35:43 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/19 09:59:47 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_convert_to_nbr(const char *nptr, int sign)
 
 int	ft_atoi(const char *nptr)
 {
-	int			i;
+	size_t		i;
 	int			sign;
 
 	if (!nptr || !*nptr)

@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 07:32:13 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 11:35:09 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/19 07:07:42 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	countwords(char const *s, char c)
 	count = 0;
 	while (s[start])
 	{
-		if (s[start + 1] == c || !s[start + 1])
+		if (!s[start + 1] || s[start + 1] == c)
 			if (s[start] != c)
 				count++;
 		start++;

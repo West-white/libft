@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 15:43:42 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/18 09:14:03 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/19 08:50:05 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			total_size;
 
 	if (nmemb == 0 || size == 0)
-		return (ft_strdup(""));
+		return (malloc(0));
 	i = 0;
 	if (nmemb * size / size != nmemb)
 		return (NULL);

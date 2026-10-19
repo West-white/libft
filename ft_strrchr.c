@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 08:24:05 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/18 07:39:16 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/19 09:07:37 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 	size_t			i;
 	unsigned char	ch;
 
-	if (!s)
-		return (NULL);
 	i = ft_strlen(s);
 	ch = c;
 	while (1)

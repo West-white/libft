@@ -6,28 +6,28 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 09:19:14 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 17:28:27 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/20 07:27:07 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_reverse(char *s, int end)
+static int	ft_getnum_len(long n)
 {
-	int		i;
-	char	tmp;
+	int	count;
 
-	i = 0;
-	if (s[i] == '-')
-		i++;
-	while (i < end)
+	count = 0;
+	if (n <= 0)
 	{
-		tmp = s[i];
-		s[i] = s[end];
-		s[end] = tmp;
-		i++;
-		end--;
+		count++;
+		n = -n;
 	}
+	while (n > 0)
+	{
+		count++;
+		n /= 10;
+	}
+	return (count);
 }
 
 char	*ft_itoa(int n)
@@ -38,23 +38,22 @@ char	*ft_itoa(int n)
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	s = malloc(12 * sizeof(char));
+	i = ft_getnum_len(n);
+	s = malloc((i + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
-	i = 0;
+	s[i--] = '\0';
 	nbr = n;
 	if (n < 0)
 	{
-		s[i++] = '-';
-		nbr *= -1;
+		s[0] = '-';
+		nbr = -nbr;
 	}
 	while (nbr > 0)
 	{
 		s[i] = nbr % 10 + '0';
 		nbr /= 10;
-		i++;
+		i--;
 	}
-	s[i] = '\0';
-	ft_reverse(s, i - 1);
 	return (s);
 }

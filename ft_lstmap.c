@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:02:21 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 17:27:29 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/20 15:33:01 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	new_list = ft_lstnew(f(lst->content));
 	if (!new_list)
-	{
-		ft_lstdelone(new_list, del);
 		return (NULL);
-	}
 	lst = lst->next;
 	while (lst)
 	{

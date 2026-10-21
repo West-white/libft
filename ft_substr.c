@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 08:00:15 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 17:32:25 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/20 18:21:24 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if (s_len < start || len == 0)
+	if (s_len < start)
 		len = 0;
 	else if (s_len - start < len)
 		len = s_len - start;

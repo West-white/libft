@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 17:29:30 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/18 08:00:47 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/19 16:23:10 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*p;
 
 	p = s;
-	while (*p && n > 0)
+	while (n > 0)
 	{
 		*p = 0;
 		n--;

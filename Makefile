@@ -16,12 +16,12 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@ar -crs $(NAME) $(OBJ_FILES)
+	@ar cr $(NAME) $(OBJ_FILES)
 
 %.o: %.c $(HEADER_FILE)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean: 
+clean:
 	@rm -f $(OBJ_FILES)
 
 fclean: clean
@@ -29,4 +29,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all fclean clean re
+.PHONY: clean

@@ -5,89 +5,86 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 07:32:13 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/19 07:07:42 by ymoubtas         ###   ########.fr       */
+/*   Created: 2026/10/20 17:41:30 by ymoubtas          #+#    #+#             */
+/*   Updated: 2026/10/20 20:13:37 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	countwords(char const *s, char c)
+static size_t	ft_countwords(const char *s, char c, size_t start)
 {
-	size_t	start;
 	size_t	count;
 
-	start = 0;
 	count = 0;
 	while (s[start])
 	{
-		if (!s[start + 1] || s[start + 1] == c)
-			if (s[start] != c)
-				count++;
-		start++;
+		while (s[start] && s[start] != c)
+			start++;
+		count++;
+		while (s[start] && s[start] == c)
+			start++;
 	}
 	return (count);
 }
 
-static void	ft_free_split(char	**splitted, size_t	end)
+static void	free_all(char **splitted, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < end)
+	while (i < size)
 	{
 		free(splitted[i]);
 		i++;
 	}
 	free(splitted);
-	return ;
 }
 
-static void	ft_split_now(char **splitted, char *trimmed, char c)
+static int	ft_getsplitted(char **splitted, const char *s, char c)
 {
 	size_t	i;
 	size_t	start;
-	size_t	pos_split;
+	size_t	i_splitted;
 
 	i = 0;
-	pos_split = 0;
-	while (trimmed[i])
+	start = 0;
+	i_splitted = 0;
+	while (s[i])
 	{
-		while (trimmed[i] && trimmed[i] == c)
+		while (s[i] && s[i] != c)
+			i++;
+		splitted[i_splitted] = ft_substr(s, start, i - start);
+		if (!splitted[i_splitted])
+		{
+			free_all(splitted, i_splitted);
+			return (0);
+		}
+		i_splitted++;
+		while (s[i] && s[i] == c)
 			i++;
 		start = i;
-		while (trimmed[i] && trimmed[i] != c)
-			i++;
-		splitted[pos_split] = ft_substr(trimmed, start, i - start);
-		if (!splitted[pos_split])
-		{
-			free(trimmed);
-			return (ft_free_split(splitted, pos_split));
-		}
-		pos_split++;
 	}
-	splitted[pos_split] = NULL;
+	splitted[i_splitted] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	count_words;
-	char	*trimmed;
+	size_t	i;
+	size_t	count;
 	char	**splitted;
 
 	if (!s)
 		return (NULL);
-	trimmed = ft_strtrim(s, &c);
-	if (!trimmed)
-		return (NULL);
-	count_words = countwords(trimmed, c);
-	splitted = malloc((count_words + 1) * sizeof(char *));
+	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	count = ft_countwords(s, c, i);
+	splitted = malloc((count + 1) * sizeof(char *));
 	if (!splitted)
-	{
-		free(trimmed);
 		return (NULL);
-	}
-	ft_split_now(splitted, trimmed, c);
-	free(trimmed);
+	if (!ft_getsplitted(splitted, s + i, c))
+		return (NULL);
 	return (splitted);
 }

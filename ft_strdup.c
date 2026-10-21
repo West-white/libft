@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 15:53:53 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 11:44:37 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/21 08:41:48 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s)
 	char	*new_s;
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	new_s = malloc(ft_strlen(s) + 1);
 	if (!new_s)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 12:07:01 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/18 11:24:37 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/21 07:47:22 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (little == NULL || big == NULL)
-		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	i = 0;

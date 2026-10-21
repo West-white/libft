@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymoubtas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 12:28:46 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/12 12:49:56 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/21 07:25:45 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (((unsigned char) c >= 'a' && (unsigned char) c <= 'z')
-		|| ((unsigned char) c >= 'A' && (unsigned char) c <= 'Z'))
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 	{
 		return (1);
 	}

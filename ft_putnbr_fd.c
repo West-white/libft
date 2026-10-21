@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 17:16:54 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 17:30:35 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/20 07:40:03 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	long	nbr;
 
-	str = ft_itoa(n);
-	if (!str)
+	nbr = n;
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
+	}
+	if (nbr <= 9)
+	{
+		ft_putchar_fd(nbr + '0', fd);
 		return ;
-	ft_putstr_fd(str, fd);
+	}
+	ft_putnbr_fd(nbr / 10, fd);
+	ft_putnbr_fd(nbr % 10, fd);
 }

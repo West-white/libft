@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 17:26:35 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/19 09:20:28 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/21 10:41:42 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*p_dst;
 	size_t				i;
 
+	if (dest == src)
+		return (dest);
 	p_src = src;
 	p_dst = dest;
 	i = 0;

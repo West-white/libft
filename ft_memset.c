@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 16:43:18 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/17 09:13:19 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/23 05:59:04 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*ptr;
 
 	i = 0;
-	ptr = (unsigned char *)s;
+	ptr = s;
 	while (i < n)
 	{
-		ptr[i] = (unsigned char) c;
+		ptr[i] = c;
 		i++;
 	}
 	return (s);

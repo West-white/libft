@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 13:33:18 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/21 10:19:11 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/24 08:47:19 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_convert_to_nbr(const char *nptr, int sign)
 	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		nbr = nbr * 10 + nptr[i] - '0';
-		if (nbr > 9223372036854775807)
+		if (nbr > LONG_MAX)
 		{
 			if (sign == 1)
 				return (-1);

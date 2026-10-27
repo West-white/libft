@@ -6,7 +6,7 @@
 /*   By: ymoubtas <ymoubtas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 20:35:06 by ymoubtas          #+#    #+#             */
-/*   Updated: 2026/10/21 12:54:12 by ymoubtas         ###   ########.fr       */
+/*   Updated: 2026/10/23 07:36:19 by ymoubtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 // Part 1
 size_t			ft_strlen(const	char *str);
